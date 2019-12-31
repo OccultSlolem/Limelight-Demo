@@ -1,7 +1,7 @@
-package com.team7528.frc2020;
+package com.team1234.frc2020;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-import com.team7528.lib.LimelightCamera;
+import com.team1234.lib.LimelightCamera;
 import edu.wpi.first.wpilibj.Joystick;
 
 @SuppressWarnings("WeakerAccess")
