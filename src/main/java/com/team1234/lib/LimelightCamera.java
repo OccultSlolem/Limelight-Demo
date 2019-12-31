@@ -1,4 +1,4 @@
-package com.team7528.lib;
+package com.team1234.lib;
 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -66,11 +66,11 @@ public class LimelightCamera {
             //Drive forward until target area is at our desired area
             double targetArea = limelightTable.getEntry("ta").getDouble(0);
             driveCommand = (DESIRED_TARGET_AREA - targetArea) * DRIVE_K;
-            if(driveCommand > MAX_SPEED) {
-                driveCommand = MAX_SPEED;
+            if(driveCommand > MAX_SPEED) { //If max speed is exceeded
+                driveCommand = MAX_SPEED; //Set drive command to speed limit
             }
-        } else {
-            driveCommand = 0.0;
+        } else { //If no target is acquired
+            driveCommand = 0.0; //Have the robot remain still
             steerCommand = 0.0;
         }
     }
@@ -82,12 +82,21 @@ public class LimelightCamera {
      *                 driver camera mode.
      */
     public void setTrackingMode(boolean tracking) {
-        if(tracking) {
+        if(tracking) { //Enable vision processing
             System.out.println("VISION PROCESSING MODE ENABLED");
             limelightTable.getEntry("camMode").setNumber(0);
-        } else {
+        } else { //Disable vision processing, enable driver camera mode
             System.out.println("VISION PROCESSING MODE DISABLED");
             limelightTable.getEntry("camMode").setNumber(1);
         }
+    }
+
+    /**
+     * Sets the pipeline that this Limelight is using
+     *
+     * @param pipeline Pipeline to switch to
+     */
+    public void setPipeline(int pipeline) {
+        limelightTable.getEntry("pipeline").setNumber(pipeline);
     }
 }

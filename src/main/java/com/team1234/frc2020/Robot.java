@@ -1,13 +1,13 @@
-package com.team7528.frc2020;
+package com.team1234.frc2020;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import static com.team7528.frc2020.RobotMap.m_leftAft;
-import static com.team7528.frc2020.RobotMap.m_rightAft;
-import static com.team7528.frc2020.RobotMap.m_leftFront;
-import static com.team7528.frc2020.RobotMap.m_rightFront;
-import static com.team7528.frc2020.RobotMap.limelightCamera;
-import static com.team7528.frc2020.RobotMap.joystick;
+import static com.team1234.frc2020.RobotMap.m_leftAft;
+import static com.team1234.frc2020.RobotMap.m_rightAft;
+import static com.team1234.frc2020.RobotMap.m_leftFront;
+import static com.team1234.frc2020.RobotMap.m_rightFront;
+import static com.team1234.frc2020.RobotMap.limelightCamera;
+import static com.team1234.frc2020.RobotMap.joystick;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +33,9 @@ public class Robot extends TimedRobot {
 
         //Instantiate DifferentialDrive
         m_drive = new DifferentialDrive(m_leftFront,RobotMap.m_rightFront);
+
+        //Set Limelight to use pipeline 0
+        limelightCamera.setPipeline(0);
     }
 
     @Override
