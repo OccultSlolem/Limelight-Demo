@@ -1,6 +1,8 @@
 # Limelight-Demo
 Demo robot project that uses a 4-motor Victor SPX drivetrain that uses a Limelight for vision alignment
 
+**Warning: This code has not been maintained for a while and may not be compatible with the latest API.** There's a good chance this *might* work, but I don't gurantee anything. Reference this at your own risk and remember to defer to Limelight/VexPRO/WPI documentation if you see a conflict with more recent versions of the API.
+
 ## Setup Instructions ##
 
 **All IDEs**
